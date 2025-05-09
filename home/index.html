@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Grace Beauty Salon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="../home/index.html" class="logo">Glow & Grace</a>
+                
+                <nav class="nav-desktop">
+                    <ul class="nav-list">
+                        <li><a href="../home/index.html" class="active">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                    <a href="../cart/index.html" class="icon-btn"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="#" class="btn btn-dark">Book Now</a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <ul class="nav-list-mobile">
+                    <li><a href="../home/index.html" class="active">Home</a></li>
+                    <li><a href="../services/index.html">Services</a></li>
+                    <li><a href="../articles/index.html">Articles</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#" class="btn btn-dark btn-full">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content animate-on-scroll">
+                    <h1>Discover Your <span class="text-pink">Natural Beauty</span> With Us</h1>
+                    <p>Experience premium beauty treatments and products that enhance your natural glow. Our expert team is dedicated to making you look and feel your best.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="../services/index.html" class="btn btn-outline">Explore Services</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <p class="stat-number">15+</p>
+                            <p class="stat-text">Expert Stylists</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <p class="stat-number">50+</p>
+                            <p class="stat-text">Beauty Services</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <p class="stat-number">5k+</p>
+                            <p class="stat-text">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image animate-on-scroll">
+                    <img src="https://i.pinimg.com/736x/f7/1f/0a/f71f0a1a0864bf6c349ae17a5abbcb98.jpg" alt="Beauty treatment">
+                
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration hero-decoration-1"></div>
+        <div class="hero-decoration hero-decoration-2"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Premium Beauty Services</h2>
+                <p>Discover our range of professional beauty services designed to enhance your natural beauty and provide a luxurious self-care experience.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Hair+Styling" alt="Hair Styling">
+                    </div>
+                    <h3>Hair Styling</h3>
+                    <p>Potongan rambut profesional dan styling untuk semua jenis rambut.</p>
+                    <div class="service-footer">
+                        <p class="service-price">Rp300.000+</p>
+                        <a href="#" class="booking-link">Booking</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Body+Massage" alt="Body massage">
+                    </div>
+                    <h3>Body massage</h3>
+                    <p>Dari highlight hingga transformasi warna penuh.</p>
+                    <div class="service-footer">
+                        <p class="service-price">Rp600.000+</p>
+                        <a href="#" class="booking-link">Booking</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Manicure" alt="Manicure & Pedicure">
+                    </div>
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Perawatan kuku dan desain indah untuk tangan dan kaki Anda.</p>
+                    <div class="service-footer">
+                        <p class="service-price">Rp400.000+</p>
+                        <a href="#" class="booking-link">Booking</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Facial" alt="Facial Treatments">
+                    </div>
+                    <h3>Facial Treatments</h3>
+                    <p>Perawatan wajah yang menyegarkan disesuaikan dengan jenis kulit Anda.</p>
+                    <div class="service-footer">
+                        <p class="service-price">Rp500.000+</p>
+                        <a href="#" class="booking-link">Booking</a>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="section-footer animate-on-scroll">
+                <a href="../services/index.html" class="btn btn-primary">Lihat Semua Layanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header-flex animate-on-scroll">
+                <div>
+                    <h2>Featured Products</h2>
+                    <p>Discover our handpicked selection of premium beauty products to enhance your daily routine and maintain your salon glow at home.</p>
+                </div>
+                <a href="#" class="view-all-link">View all products <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/FFF0D9/FF85A2?text=Serum" alt="Hydrating Facial Serum">
+                        <div class="product-category">Skincare</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Hydrating Facial Serum</h3>
+                        <p class="product-price">$49.99</p>
+                        <button class="btn btn-dark add-to-cart-btn">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/FFF0D9/FF85A2?text=Mascara" alt="Volumizing Mascara">
+                        <div class="product-category">Makeup</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Volumizing Mascara</h3>
+                        <p class="product-price">$24.99</p>
+                        <button class="btn btn-dark add-to-cart-btn">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/FFF0D9/FF85A2?text=Hair+Mask" alt="Nourishing Hair Mask">
+                        <div class="product-category">Hair Care</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Nourishing Hair Mask</h3>
+                        <p class="product-price">$34.99</p>
+                        <button class="btn btn-dark add-to-cart-btn">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/FFF0D9/FF85A2?text=Night+Cream" alt="Rejuvenating Night Cream">
+                        <div class="product-category">Skincare</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Rejuvenating Night Cream</h3>
+                        <p class="product-price">$59.99</p>
+                        <button class="btn btn-dark add-to-cart-btn">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from our satisfied clients about their experiences with our beauty services and products.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I've been coming to Glow & Grace for over a year now, and I'm always impressed by the quality of service. The facial treatments have completely transformed my skin!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placehold.co/100x100/FFF0D9/FF85A2?text=SW" alt="Sophia Williams">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophia Williams</h4>
+                            <p>Regular Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"My first visit to Glow & Grace exceeded all my expectations. The staff was friendly, the atmosphere was relaxing, and my hair looks amazing!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placehold.co/100x100/FFF0D9/FF85A2?text=EJ" alt="Emma Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emma Johnson</h4>
+                            <p>New Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The massage therapy at Glow & Grace is absolutely divine. It's my monthly treat to myself, and I always leave feeling refreshed and rejuvenated."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placehold.co/100x100/FFF0D9/FF85A2?text=OD" alt="Olivia Davis">
+                        </div>
+                        <div class="author-info">
+                            <h4>Olivia Davis</h4>
+                            <p>Monthly Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="latest-articles">
+        <div class="container">
+            <div class="section-header-flex animate-on-scroll">
+                <div>
+                    <h2>Beauty Tips & Insights</h2>
+                    <p>Stay updated with the latest beauty trends, tips, and expert advice from our blog.</p>
+                </div>
+                <a href="../articles/index.html" class="view-all-link">View all articles <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="articles-grid">
+                <article class="article-card animate-on-scroll">
+                    <div class="article-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Skincare+Tips" alt="Skincare Tips">
+                        <div class="article-category">Skincare</div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-date">May 2, 2023</div>
+                        <h3>10 Skincare Tips for Glowing Skin</h3>
+                        <p>Discover the secrets to achieving and maintaining radiant, healthy skin with these expert tips.</p>
+                        <a href="../articles/index.html" class="article-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="article-card animate-on-scroll">
+                    <div class="article-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Hair+Care" alt="Hair Care">
+                        <div class="article-category">Hair Care</div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-date">April 18, 2023</div>
+                        <h3>Summer Hair Care: Protecting Your Hair from Sun Damage</h3>
+                        <p>Learn how to keep your hair healthy and beautiful during the hot summer months with these essential care tips.</p>
+                        <a href="../articles/index.html" class="article-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="article-card animate-on-scroll">
+                    <div class="article-image">
+                        <img src="https://placehold.co/600x400/FFF0D9/FF85A2?text=Nail+Art" alt="Nail Art">
+                        <div class="article-category">Nail Care</div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-date">April 5, 2023</div>
+                        <h3>The Ultimate Guide to Nail Art Trends</h3>
+                        <p>Stay on top of the latest nail art trends and learn how to recreate them at home with our step-by-step guide.</p>
+                        <a href="../articles/index.html" class="article-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="booking-cta">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Experience the Glow & Grace Difference?</h2>
+                <p>Book your appointment today and treat yourself to our premium beauty services. Our expert team is ready to help you look and feel your best.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Book Appointment</a>
+                    <a href="#" class="btn btn-outline-light">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="cta-decoration cta-decoration-1"></div>
+        <div class="cta-decoration cta-decoration-2"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo">Glow & Grace</h3>
+                    <p>Premium beauty salon services and products for your ultimate self-care experience.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../home/index.html">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../services/index.html">Facial Treatments</a></li>
+                        <li><a href="../services/index.html">Hair Styling</a></li>
+                        <li><a href="../services/index.html">Nail Care</a></li>
+                        <li><a href="../services/index.html">Makeup Services</a></li>
+                        <li><a href="../services/index.html">Massage Therapy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for exclusive offers and beauty tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-dark">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Glow & Grace Beauty Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cartNotification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText">Item added to cart!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
