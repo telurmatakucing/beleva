@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Glow & Grace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>Glow & Grace</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/articles/index.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Kelola Artikel</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/products/index.html" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Kelola Produk</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/users/index.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Kelola Pengguna</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/transactions/index.html" class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Kelola Transaksi</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Dashboard</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cari...">
+                </div>
+                
+                <div class="header-actions">
+                    <button class="action-btn notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    
+                    <div class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name" id="userName">Admin</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Artikel</h3>
+                        <p class="stat-number" id="totalArticles">24</p>
+                        <span class="stat-change positive">+12% dari bulan lalu</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Layanan</h3>
+                        <p class="stat-number" id="totalProducts">12</p>
+                        <span class="stat-change positive">+8% dari bulan lalu</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Pengguna</h3>
+                        <p class="stat-number" id="totalUsers">1,234</p>
+                        <span class="stat-change positive">+15% dari bulan lalu</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Transaksi</h3>
+                        <p class="stat-number" id="totalTransactions">89</p>
+                        <span class="stat-change negative">-3% dari bulan lalu</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Charts -->
+            <div class="dashboard-charts">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Penjualan Bulanan</h3>
+                        <div class="chart-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="salesChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Layanan Populer</h3>
+                        <div class="chart-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-eye"></i>
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="servicesChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="recent-activities">
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3>Aktivitas Terbaru</h3>
+                        <a href="#" class="view-all-link">Lihat Semua</a>
+                    </div>
+                    <div class="activity-list" id="recentActivities">
+                        <!-- Activities will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Konfirmasi Logout</h3>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda yakin ingin keluar dari dashboard admin?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelLogout">Batal</button>
+                <button class="btn btn-primary" id="confirmLogout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - Glow & Grace Beauty Salon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="../index.html" class="logo">Glow & Grace</a>
+                
+                <nav class="nav-desktop">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                      
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                    <a href="../cart/index.html" class="icon-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <section class="progress-steps">
+        <div class="container">
+            <div class="steps-wrapper">
+                <div class="step completed">
+                    <div class="step-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <span>Cart</span>
+                </div>
+                <div class="step-line completed"></div>
+                <div class="step completed">
+                    <div class="step-icon"><i class="fas fa-user"></i></div>
+                    <span>Info</span>
+                </div>
+                <div class="step-line active"></div>
+                <div class="step active">
+                    <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                    <span>Payment</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-check"></i></div>
+                    <span>Complete</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Page -->
+    <main class="payment-page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-credit-card"></i> Pembayaran</h1>
+                <p>Pilih metode pembayaran dan selesaikan booking Anda</p>
+            </div>
+
+            <div class="payment-wrapper">
+                <!-- Payment Methods -->
+                <div class="payment-content">
+                    <!-- Booking Summary -->
+                    <div class="booking-summary-card">
+                        <h3><i class="fas fa-calendar-check"></i> Ringkasan Booking</h3>
+                        <div class="booking-info" id="bookingInfo">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="payment-methods-card">
+                        <h3><i class="fas fa-credit-card"></i> Metode Pembayaran</h3>
+                        
+                        <!-- Bank Transfer -->
+                        <div class="payment-method">
+                            <input type="radio" id="bankTransfer" name="paymentMethod" value="bank_transfer" checked>
+                            <label for="bankTransfer" class="payment-method-label">
+                                <div class="payment-method-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="payment-method-info">
+                                    <h4>Bank Transfer</h4>
+                                    <p>Transfer langsung ke rekening salon</p>
+                                </div>
+                                <div class="payment-method-logos">
+                                    <img src="https://img.icons8.com/color/48/bank.png" alt="Bank">
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- E-Wallet -->
+                        <div class="payment-method">
+                            <input type="radio" id="eWallet" name="paymentMethod" value="e_wallet">
+                            <label for="eWallet" class="payment-method-label">
+                                <div class="payment-method-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="payment-method-info">
+                                    <h4>E-Wallet</h4>
+                                    <p>GoPay, DANA, ShopeePay</p>
+                                </div>
+                                <div class="payment-method-logos">
+                                    <img src="https://img.icons8.com/color/48/gopay.png" alt="GoPay">
+                                    <img src="https://img.icons8.com/color/48/dana.png" alt="DANA">
+                                    <img src="https://img.icons8.com/color/48/shopee.png" alt="ShopeePay">
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Cash Payment -->
+                        <div class="payment-method">
+                            <input type="radio" id="cashPayment" name="paymentMethod" value="cash">
+                            <label for="cashPayment" class="payment-method-label">
+                                <div class="payment-method-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="payment-method-info">
+                                    <h4>Bayar di Salon</h4>
+                                    <p>Bayar tunai saat datang ke salon</p>
+                                </div>
+                                <div class="payment-method-logos">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Forms -->
+                    <div class="payment-forms">
+                        <!-- Bank Transfer Form -->
+                        <div class="payment-form" id="bank_transferForm">
+                            <h4><i class="fas fa-university"></i> Pilih Bank</h4>
+                            <div class="bank-options">
+                                <div class="bank-option">
+                                    <input type="radio" id="bca" name="bank" value="bca" checked>
+                                    <label for="bca">
+                                        <img src="https://img.icons8.com/color/48/bank.png" alt="BCA">
+                                        <span>BCA</span>
+                                    </label>
+                                </div>
+                                <div class="bank-option">
+                                    <input type="radio" id="mandiri" name="bank" value="mandiri">
+                                    <label for="mandiri">
+                                        <img src="https://img.icons8.com/color/48/bank.png" alt="Mandiri">
+                                        <span>Mandiri</span>
+                                    </label>
+                                </div>
+                                <div class="bank-option">
+                                    <input type="radio" id="bni" name="bank" value="bni">
+                                    <label for="bni">
+                                        <img src="https://img.icons8.com/color/48/bank.png" alt="BNI">
+                                        <span>BNI</span>
+                                    </label>
+                                </div>
+                                <div class="bank-option">
+                                    <input type="radio" id="bri" name="bank" value="bri">
+                                    <label for="bri">
+                                        <img src="https://img.icons8.com/color/48/bank.png" alt="BRI">
+                                        <span>BRI</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="transfer-info">
+                                <div class="info-box">
+                                    <h5><i class="fas fa-info-circle"></i> Informasi Transfer</h5>
+                                    <p>Setelah memilih bank, Anda akan mendapatkan nomor rekening dan instruksi transfer.</p>
+                                    <p><strong>Transfer dalam 24 jam</strong> untuk mengkonfirmasi booking Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- E-Wallet Form -->
+                        <div class="payment-form" id="e_walletForm" style="display: none;">
+                            <h4><i class="fas fa-mobile-alt"></i> Pilih E-Wallet</h4>
+                            <div class="ewallet-options">
+                                <div class="ewallet-option">
+                                    <input type="radio" id="gopay" name="ewallet" value="gopay" checked>
+                                    <label for="gopay">
+                                        <img src="https://img.icons8.com/color/48/gopay.png" alt="GoPay">
+                                        <span>GoPay</span>
+                                    </label>
+                                </div>
+                                <div class="ewallet-option">
+                                    <input type="radio" id="dana" name="ewallet" value="dana">
+                                    <label for="dana">
+                                        <img src="https://img.icons8.com/color/48/dana.png" alt="DANA">
+                                        <span>DANA</span>
+                                    </label>
+                                </div>
+                                <div class="ewallet-option">
+                                    <input type="radio" id="shopeepay" name="ewallet" value="shopeepay">
+                                    <label for="shopeepay">
+                                        <img src="https://img.icons8.com/color/48/shopee.png" alt="ShopeePay">
+                                        <span>ShopeePay</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Nomor Telepon *</label>
+                                <input type="tel" id="phoneNumber" placeholder="08xxxxxxxxxx" required>
+                            </div>
+                            <div class="ewallet-info">
+                                <div class="info-box">
+                                    <h5><i class="fas fa-info-circle"></i> Cara Pembayaran</h5>
+                                    <p>1. Pilih e-wallet yang Anda gunakan</p>
+                                    <p>2. Masukkan nomor telepon yang terdaftar</p>
+                                    <p>3. Anda akan menerima notifikasi pembayaran di aplikasi</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cash Payment Info -->
+                        <div class="payment-form" id="cashForm" style="display: none;">
+                            <div class="cash-info">
+                                <div class="cash-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <h4>Bayar di Salon</h4>
+                                <p>Anda dapat membayar secara tunai saat datang ke salon pada waktu appointment yang telah dijadwalkan.</p>
+                                <div class="cash-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>123 Beauty Street, Jakarta Selatan</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Buka: 09:00 - 21:00 (Senin - Minggu)</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>(021) 123-4567</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-parking"></i>
+                                        <span>Parkir gratis tersedia</span>
+                                    </div>
+                                </div>
+                                <div class="cash-note">
+                                    <div class="info-box warning">
+                                        <h5><i class="fas fa-exclamation-triangle"></i> Penting!</h5>
+                                        <p>Harap datang <strong>15 menit sebelum</strong> waktu appointment Anda.</p>
+                                        <p>Pembayaran dapat dilakukan dengan <strong>tunai atau kartu debit</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Summary -->
+                <div class="payment-sidebar">
+                    <div class="payment-summary-card">
+                        <h3><i class="fas fa-receipt"></i> Ringkasan Pembayaran</h3>
+                        
+                        <div class="services-list" id="servicesList">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+
+                        <div class="payment-breakdown">
+                            <div class="breakdown-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotalAmount">Rp 0</span>
+                            </div>
+                            <div class="breakdown-row" id="discountRow" style="display: none;">
+                                <span>Diskon:</span>
+                                <span id="discountAmount">-Rp 0</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Biaya Admin:</span>
+                                <span id="adminFee">Rp 20.000</span>
+                            </div>
+                            <div class="breakdown-row total-row">
+                                <span>Total Pembayaran:</span>
+                                <span id="totalAmount">Rp 0</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-actions">
+                            <button class="btn btn-primary btn-full" id="processPayment">
+                                <i class="fas fa-lock"></i> Bayar Sekarang
+                            </button>
+                            <a href="../cart/index.html" class="btn btn-outline btn-full">
+                                <i class="fas fa-arrow-left"></i> Kembali ke Cart
+                            </a>
+                        </div>
+
+                        <div class="security-info">
+                            <div class="security-badges">
+                                <div class="security-badge">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>SSL Secured</span>
+                                </div>
+                                <div class="security-badge">
+                                    <i class="fas fa-lock"></i>
+                                    <span>256-bit Encryption</span>
+                                </div>
+                            </div>
+                            <p>Pembayaran Anda aman dan terenkripsi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Processing Modal -->
+    <div class="modal" id="processingModal">
+        <div class="modal-content processing-modal">
+            <div class="modal-body">
+                <div class="processing-animation">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Memproses Pembayaran...</h3>
+                <p>Mohon tunggu, jangan tutup halaman ini.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="paymentSuccessModal">
+        <div class="modal-content success-modal">
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Pembayaran Berhasil!</h3>
+                <p>Terima kasih! Pembayaran Anda telah berhasil diproses.</p>
+                <div class="payment-details" id="paymentDetails">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                <div class="success-actions">
+                    <button class="btn btn-primary" id="downloadReceipt">
+                        <i class="fas fa-download"></i> Download Receipt
+                    </button>
+                    <button class="btn btn-secondary" id="viewHistoryBtn">
+                        <i class="fas fa-history"></i> Lihat History
+                    </button>
+                    <a href="../index.html" class="btn btn-outline">Kembali ke Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2023 Glow & Grace Beauty Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

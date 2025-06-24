@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Transaksi - Glow & Grace Beauty Salon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="../index.html" class="logo">Glow & Grace</a>
+                
+                <nav class="nav-desktop">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                    <a href="../cart/index.html" class="icon-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="index.html" class="icon-btn active">
+                        <i class="fas fa-history"></i>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <ul class="nav-list-mobile">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services/index.html">Services</a></li>
+                    <li><a href="../articles/index.html">Articles</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="index.html" class="active">History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+           
+        </div>
+    </section>
+
+    <!-- History Page -->
+    <main class="history-page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-history"></i> History Transaksi</h1>
+                <p>Lihat semua transaksi dan appointment Anda</p>
+            </div>
+
+            <!-- Filter & Search -->
+            <div class="filter-section">
+                <div class="filter-wrapper">
+                    <div class="filter-left">
+                        <div class="filter-group">
+                            <label for="statusFilter">Status:</label>
+                            <select id="statusFilter">
+                                <option value="all">Semua Status</option>
+                                <option value="completed">Selesai</option>
+                                <option value="confirmed">Dikonfirmasi</option>
+                                <option value="pending">Menunggu</option>
+                                <option value="cancelled">Dibatalkan</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="paymentFilter">Pembayaran:</label>
+                            <select id="paymentFilter">
+                                <option value="all">Semua Metode</option>
+                                <option value="bank_transfer">Bank Transfer</option>
+                                <option value="e_wallet">E-Wallet</option>
+                                <option value="cash">Bayar di Salon</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="dateFilter">Periode:</label>
+                            <select id="dateFilter">
+                                <option value="all">Semua Waktu</option>
+                                <option value="today">Hari Ini</option>
+                                <option value="week">Minggu Ini</option>
+                                <option value="month">Bulan Ini</option>
+                                <option value="3months">3 Bulan Terakhir</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-right">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Cari booking reference atau layanan...">
+                            <button class="search-btn" id="searchBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <button class="btn btn-outline" id="clearFilters">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalBookings">0</h3>
+                            <p>Total Booking</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalSpent">$0</h3>
+                            <p>Total Pengeluaran</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="completedBookings">0</h3>
+                            <p>Booking Selesai</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="upcomingBookings">0</h3>
+                            <p>Booking Mendatang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transaction List -->
+            <div class="transactions-section">
+                <div class="section-header">
+                    <h2>Daftar Transaksi</h2>
+                    <div class="view-toggle">
+                        <button class="toggle-btn active" data-view="list">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                        <button class="toggle-btn" data-view="grid">
+                            <i class="fas fa-th"></i> Grid
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h3>Belum Ada Transaksi</h3>
+                    <p>Anda belum memiliki transaksi. Mulai booking layanan kami sekarang!</p>
+                    <a href="../services/index.html" class="btn btn-primary">
+                        <i class="fas fa-spa"></i> Lihat Layanan
+                    </a>
+                </div>
+
+                <!-- Transaction List View -->
+                <div class="transactions-list" id="transactionsList">
+                    <!-- Transactions will be populated by JavaScript -->
+                </div>
+
+                <!-- Transaction Grid View -->
+                <div class="transactions-grid" id="transactionsGrid" style="display: none;">
+                    <!-- Transactions will be populated by JavaScript -->
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-section" id="loadMoreSection" style="display: none;">
+                    <button class="btn btn-outline" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i> Load More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Transaction Detail Modal -->
+    <div class="modal" id="transactionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-receipt"></i> Detail Transaksi</h3>
+                <span class="close-modal" id="closeTransactionModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="transaction-detail" id="transactionDetail">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="downloadReceiptBtn">
+                    <i class="fas fa-download"></i> Download Receipt
+                </button>
+                <button class="btn btn-primary" id="rebookBtn">
+                    <i class="fas fa-redo"></i> Book Lagi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-star"></i> Berikan Review</h3>
+                <span class="close-modal" id="closeReviewModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="review-form">
+                    <div class="rating-section">
+                        <label>Rating:</label>
+                        <div class="star-rating" id="starRating">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Review Anda:</label>
+                        <textarea id="reviewText" placeholder="Bagikan pengalaman Anda..." rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelReview">Batal</button>
+                <button class="btn btn-primary" id="submitReview">
+                    <i class="fas fa-paper-plane"></i> Kirim Review
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo">Glow & Grace</h3>
+                    <p>Premium beauty salon services and products for your ultimate self-care experience.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../services/index.html">Facial Treatments</a></li>
+                        <li><a href="../services/index.html">Hair Styling</a></li>
+                        <li><a href="../services/index.html">Nail Care</a></li>
+                        <li><a href="../services/index.html">Makeup Services</a></li>
+                        <li><a href="../services/index.html">Massage Therapy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (021) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@glowgrace.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Jakarta</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Glow & Grace Beauty Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 /* CSS Variables */
 :root {
     /* Colors */
-    --pink: #FF85A2;
-    --pink-light: #FFC0CB;
+    --pink: #d16ba5;
+    --pink-light: #f8e1e6;
     --pink-dark: #FF5C7F;
     --cream: #FFF0D9;
     --cream-light: #FFF8E7;
@@ -81,32 +81,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--pink);
+    background-color: #d16ba5;
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: var(--pink-dark);
+    background-color: var(--black);
 }
 
 .btn-dark {
-    background-color: var(--black);
+    background-color: #333;
     color: var(--white);
 }
 
 .btn-dark:hover {
-    background-color: #333;
+    background-color: var(--black)  ;
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 2px solid var(--cream-dark);
+    border: 2px solid var(--pink);
     color: var(--foreground);
 }
 
 .btn-outline:hover {
     border-color: var(--pink);
-    color: var(--pink);
+    color: var(--white);
+    background-color: var(--pink);
 }
 
 .btn-outline-light {
@@ -137,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .icon-btn:hover {
-    background-color: var(--cream-light);
+    background-color: #f8f8f8;
     color: var(--pink);
 }
 
@@ -151,7 +152,6 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     z-index: 100;
     background-color: var(--white);
-    border-bottom: 1px solid var(--cream-dark);
     padding: 1rem 0;
 }
 
@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-list a:hover,
 .nav-list a.active {
-    color: var(--pink);
+    color: #d16ba5;
 }
 
 .nav-list a.active::after {
@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--pink);
+    background-color: #d16ba5;
 }
 
 .header-actions {
@@ -240,9 +240,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-    background-color: var(--cream-light);
+    background-color:#f8f8f8;
     padding: 4rem 0 2rem;
-    border-top: 1px solid var(--cream-dark);
+  
 }
 
 .footer-grid {
@@ -311,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .newsletter-form input {
     padding: 0.8rem 1.2rem;
-    border: 1px solid var(--cream-dark);
+    border: 1px solid var(--light-pink);
     border-radius: 5px;
 }
 
@@ -323,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-bottom {
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--cream-dark);
+ 
     text-align: center;
     color: var(--muted);
     font-size: 0.9rem;
@@ -331,7 +331,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Page Banner */
 .page-banner {
-    background-color: var(--cream-light);
+    background-color: #f8e1e6;
     padding: 5rem 0;
     position: relative;
     overflow: hidden;
@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5, h6 {
 .banner-decoration {
     position: absolute;
     border-radius: 50%;
-    background-color: var(--pink-light);
+    background-color: var(--pink);
     opacity: 0.2;
     z-index: 0;
 }
@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-categories {
     padding: 2rem 0;
     background-color: var(--white);
-    border-bottom: 1px solid var(--cream-dark);
+  
 }
 
 .categories-wrapper {
@@ -395,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 .category-btn {
     padding: 0.6rem 1.2rem;
     background-color: transparent;
-    border: 2px solid var(--cream-dark);
+    border: 2px solid var( --pink-light);
     border-radius: 50px;
     font-weight: 500;
     cursor: pointer;
@@ -426,7 +426,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-item {
-    background-color: var(--white);
+    background-color: #f8e1e6;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -462,6 +462,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
     font-family: var(--font-serif);
+    color: var(--black);
 }
 
 .service-meta {
@@ -491,14 +492,14 @@ h1, h2, h3, h4, h5, h6 {
 .service-details-btn {
     background: none;
     border: none;
-    color: var(--pink);
+    color: var(--black);
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .service-details-btn:hover {
-    color: var(--pink-dark);
+    color: var(--pink);
 }
 
 /* Modal */
@@ -589,62 +590,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-/* Booking CTA */
-.booking-cta {
-    padding: 5rem 0;
-    background-color: var(--pink-light);
-    position: relative;
-    overflow: hidden;
-}
 
-.cta-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-serif);
-}
-
-.cta-content p {
-    font-size: 1.1rem;
-    color: var(--muted);
-    margin-bottom: 2rem;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.cta-decoration {
-    position: absolute;
-    border-radius: 50%;
-    background-color: var(--pink);
-    opacity: 0.1;
-    z-index: 0;
-}
-
-.cta-decoration-1 {
-    width: 200px;
-    height: 200px;
-    top: 25%;
-    right: 10%;
-}
-
-.cta-decoration-2 {
-    width: 150px;
-    height: 150px;
-    bottom: 25%;
-    left: 10%;
-}
 
 /* Responsive Styles */
 @media (min-width: 768px) {

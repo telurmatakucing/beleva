@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Booking - Glow & Grace Beauty Salon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="../index.html" class="logo">Glow & Grace</a>
+                
+                <nav class="nav-desktop">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="icon-btn cart-icon active">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="#" class="btn btn-dark">Book Now</a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <ul class="nav-list-mobile">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services/index.html">Services</a></li>
+                    <li><a href="../articles/index.html">Articles</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#" class="btn btn-dark btn-full">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../services/index.html">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Keranjang Booking</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Cart Page -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-shopping-bag"></i> Keranjang Booking</h1>
+                <p>Review layanan yang Anda pilih dan atur jadwal appointment Anda</p>
+            </div>
+
+            <div class="cart-wrapper">
+                <!-- Cart Items -->
+                <div class="cart-content">
+                    <!-- Empty Cart State -->
+                    <div class="empty-cart" id="emptyCart">
+                        <div class="empty-cart-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>Keranjang Anda Kosong</h3>
+                        <p>Belum ada layanan yang dipilih. Jelajahi layanan kami dan pilih treatment yang Anda inginkan.</p>
+                        <a href="../services/index.html" class="btn btn-primary">
+                            <i class="fas fa-spa"></i> Lihat Layanan
+                        </a>
+                    </div>
+
+                    <!-- Cart Items List -->
+                    <div class="cart-items" id="cartItems" style="display: none;">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <div class="continue-shopping" id="continueShopping" style="display: none;">
+                        <a href="../services/index.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i> Tambah Layanan Lain
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-card">
+                        <h3>Ringkasan Booking</h3>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Total Layanan:</span>
+                                <span id="totalServices">0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Total Durasi:</span>
+                                <span id="totalDuration">0 menit</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Total Harga:</span>
+                                <span id="totalPrice">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="booking-info">
+                            <h4>Informasi Booking</h4>
+                            <div class="booking-field">
+                                <label for="bookingDate">Tanggal Preferred:</label>
+                                <input type="date" id="bookingDate" min="" required>
+                            </div>
+                            <div class="booking-field">
+                                <label for="bookingTime">Waktu Preferred:</label>
+                                <select id="bookingTime" required>
+                                    <option value="">Pilih Waktu</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">01:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="booking-field">
+                                <label for="specialRequests">Permintaan Khusus:</label>
+                                <textarea id="specialRequests" placeholder="Catatan tambahan untuk appointment Anda..." rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="summary-actions">
+                            <button class="btn btn-primary btn-full" id="proceedBooking">
+                                <i class="fas fa-calendar-check"></i> Lanjutkan Booking
+                            </button>
+                            <button class="btn btn-outline btn-full" id="clearCart">
+                                <i class="fas fa-trash"></i> Kosongkan Keranjang
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Promo Code -->
+                    <div class="promo-section">
+                        <h4>Kode Promo</h4>
+                        <div class="promo-input">
+                            <input type="text" id="promoCode" placeholder="Masukkan kode promo">
+                            <button class="btn btn-outline" id="applyPromo">Apply</button>
+                        </div>
+                        <div class="promo-message" id="promoMessage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-calendar-check"></i> Konfirmasi Booking</h3>
+                <span class="close-modal" id="closeBookingModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="booking-summary">
+                    <h4>Detail Appointment Anda</h4>
+                    <div class="booking-details" id="bookingDetails">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="customer-info">
+                    <h4>Informasi Kontak</h4>
+                    <form id="customerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerName">Nama Lengkap *</label>
+                                <input type="text" id="customerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">No. Telepon *</label>
+                                <input type="tel" id="customerPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerEmail">Email</label>
+                            <input type="email" id="customerEmail">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelBooking">Batal</button>
+                <button class="btn btn-primary" id="confirmBooking">
+                    <i class="fas fa-check"></i> Konfirmasi Booking
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Booking Berhasil!</h3>
+                <p>Terima kasih! Appointment Anda telah berhasil dibuat. Kami akan menghubungi Anda untuk konfirmasi lebih lanjut.</p>
+                <div class="booking-reference">
+                    <strong>Kode Booking: <span id="bookingReference"></span></strong>
+                </div>
+                <div class="success-actions">
+                    <button class="btn btn-primary" id="closeSuccessModal">OK</button>
+                    <a href="../services/index.html" class="btn btn-outline">Book Lagi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo">Glow & Grace</h3>
+                    <p>Premium beauty salon services and products for your ultimate self-care experience.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/index.html">Services</a></li>
+                        <li><a href="../articles/index.html">Articles</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../services/index.html">Facial Treatments</a></li>
+                        <li><a href="../services/index.html">Hair Styling</a></li>
+                        <li><a href="../services/index.html">Nail Care</a></li>
+                        <li><a href="../services/index.html">Makeup Services</a></li>
+                        <li><a href="../services/index.html">Massage Therapy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@glowgrace.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Glow & Grace Beauty Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

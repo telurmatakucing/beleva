@@ -47,6 +47,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Hero Slider Functionality
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoPlay;
+        
+        // Function to show specific slide
+        function showSlide(index) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            if (dots.length > 0) {
+                dots.forEach(dot => dot.classList.remove('active'));
+            }
+            
+            // Add active class to current slide and dot
+            slides[index].classList.add('active');
+            if (dots[index]) {
+                dots[index].classList.add('active');
+            }
+            
+            currentSlide = index;
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+        
+        // Previous slide function
+        function prevSlideFunc() {
+            const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+        
+        // Event listeners for navigation buttons
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlideFunc);
+        }
+        
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto-play slider
+        function startAutoPlay() {
+            autoPlay = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlay);
+        }
+        
+        // Start auto-play
+        startAutoPlay();
+        
+        // Pause auto-play on hover
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', stopAutoPlay);
+            heroSection.addEventListener('mouseleave', startAutoPlay);
+        }
+    }
+
     // Add to Cart Functionality
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     const cartNotification = document.getElementById('cartNotification');
@@ -140,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
         checkAnimations();
     }
 
-    // Hero Image Parallax Effect
+    // Hero Image Parallax Effect (untuk hero lama, bisa dihapus kalau sudah pakai slider)
     const heroImage = document.querySelector('.hero-image img');
     
     if (heroImage) {
