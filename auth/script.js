@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         showSuccessNotification("Login admin berhasil! Mengalihkan ke dashboard...");
         setTimeout(() => {
-          window.location.href = "/pages/index.html"; // Arahkan ke dashboard admin
+          window.location.href = "../pages/index.html"; // Arahkan ke dashboard admin
         }, 1500);
       } else {
         // Check user credentials
