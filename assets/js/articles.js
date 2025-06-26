@@ -20,7 +20,7 @@ loadSampleData() {
       category: "skincare",
       author: "Dr. Sarah Beauty",
       status: "published",
-      image: "/image/skincare.jpg", // Path lokal
+      image: "../image/skincare.jpg", // Path lokal
       excerpt:
         "Dapatkan kulit glowing dengan 10 tips skincare yang mudah diterapkan sehari-hari. Mulai dari pembersihan hingga pelembab yang tepat.",
       content:
@@ -35,7 +35,7 @@ loadSampleData() {
       category: "haircare",
       author: "Lisa Hair Expert",
       status: "published",
-      image: "/image/haircare.jpg", // Path lokal
+      image: "../image/haircare.jpg", // Path lokal
       excerpt:
         "Lindungi rambut Anda dari kerusakan musim panas dengan panduan perawatan rambut yang komprehensif ini.",
       content:
@@ -50,7 +50,7 @@ loadSampleData() {
       category: "makeup",
       author: "Anna Makeup Artist",
       status: "draft",
-      image: "/image/makeuptrend.jpg", // Path lokal
+      image: "../image/makeuptrend.jpg", // Path lokal
       excerpt: "Temukan tren makeup terbaru untuk tahun 2024 yang akan membuat penampilan Anda semakin memukau.",
       content:
         "Tahun 2024 membawa tren makeup yang fresh dan natural. Mari kita explore tren-tren yang akan populer...",
@@ -64,7 +64,7 @@ loadSampleData() {
       category: "wellness",
       author: "Dr. Maria Wellness",
       status: "published",
-      image: "/image/selfcare.jpg", // Path lokal
+      image: "../image/selfcare.jpg", // Path lokal
       excerpt: "Bangun rutinitas self-care yang efektif untuk kesehatan mental dan fisik yang optimal.",
       content:
         "Self-care bukan hanya tentang perawatan kecantikan, tetapi juga tentang kesehatan mental dan fisik secara keseluruhan...",
@@ -78,7 +78,7 @@ loadSampleData() {
       category: "tips",
       author: "Beauty Guru",
       status: "published",
-      image: "/image/diymask.jpg", // Path lokal
+      image: "../image/diymask.jpg", // Path lokal
       excerpt: "Buat masker wajah alami di rumah dengan bahan-bahan yang mudah ditemukan di dapur Anda.",
       content: "Masker wajah alami dapat memberikan nutrisi yang dibutuhkan kulit tanpa bahan kimia berbahaya...",
       tags: ["diy", "face mask", "natural", "skincare"],
@@ -91,7 +91,7 @@ loadSampleData() {
       category: "haircare",
       author: "Color Specialist",
       status: "archived",
-      image: "/image/haircolorsafety.jpg", // Path lokal (menggunakan yang sama jika belum ada gambar lain)
+      image: "../image/haircolorsafety.jpg", // Path lokal (menggunakan yang sama jika belum ada gambar lain)
       excerpt: "Panduan lengkap untuk mewarnai rambut dengan aman dan mendapatkan hasil yang optimal.",
       content:
         "Mewarnai rambut membutuhkan perhatian khusus untuk menghindari kerusakan. Berikut tips keamanan yang perlu diperhatikan...",
