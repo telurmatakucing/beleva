@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Transaksi - Glow & Grace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/transaksi.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>Glow & Grace</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../articles_admin/index.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Kelola Artikel</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../services_admin/index.html" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Kelola Layanan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../users/index.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Kelola Pengguna</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/transaksi/index.html" class="nav-link active">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Kelola Transaksi</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Kelola Transaksi</h1>
+            </div>
+            
+                
+                <div class="header-actions">
+                    <button class="action-btn notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    
+                    <div class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name" id="userName">Admin</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Stats Cards -->
+            <div class="transaction-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Pendapatan</h3>
+                        <p class="stat-number" id="totalRevenue">Rp 15,750,000</p>
+                        <span class="stat-change positive">+12% dari bulan lalu</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Transaksi</h3>
+                        <p class="stat-number" id="totalTransactions">89</p>
+                        <span class="stat-change positive">+8% dari bulan lalu</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Pending</h3>
+                        <p class="stat-number" id="pendingTransactions">12</p>
+                        <span class="stat-change neutral">Perlu ditindaklanjuti</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Rata-rata Transaksi</h3>
+                        <p class="stat-number" id="avgTransaction">Rp 177,000</p>
+                        <span class="stat-change positive">+5% dari bulan lalu</span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="section-actions">
+                    <div class="search-filter">
+                        <input type="text" id="transactionSearch" placeholder="Cari transaksi..." class="search-input">
+                        <select id="transactionStatusFilter" class="filter-select">
+                            <option value="">Semua Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="refunded">Refunded</option>
+                        </select>
+                        <select id="transactionMethodFilter" class="filter-select">
+                            <option value="">Semua Metode</option>
+                            <option value="cash">Cash</option>
+                            <option value="transfer">Transfer</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="e_wallet">E-Wallet</option>
+                        </select>
+                        <input type="date" id="transactionDateFilter" class="filter-select">
+                    </div>
+                    <button class="btn btn-primary" id="addTransactionBtn">
+                        <i class="fas fa-plus"></i>
+                        Tambah Transaksi
+                    </button>
+                </div>
+            </div>
+            
+            <div class="transactions-table-container">
+                <table class="transactions-table" id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>ID Transaksi</th>
+                            <th>Customer</th>
+                            <th>Layanan</th>
+                            <th>Total</th>
+                            <th>Metode Bayar</th>
+                            <th>Status</th>
+                            <th>Tanggal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsTableBody">
+                        <!-- Transactions will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Menampilkan <span id="transactionStartRange">1</span>-<span id="transactionEndRange">10</span> dari <span id="transactionTotal">89</span> transaksi
+                </div>
+                <div class="pagination-controls">
+                    <button class="btn btn-outline" id="transactionPrevPage" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="page-numbers" id="transactionPageNumbers">
+                        <button class="btn btn-outline active">1</button>
+                        <button class="btn btn-outline">2</button>
+                        <button class="btn btn-outline">3</button>
+                    </span>
+                    <button class="btn btn-outline" id="transactionNextPage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Transaction Modal -->
+    <div class="modal" id="transactionModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3 id="transactionModalTitle">Tambah Transaksi Baru</h3>
+                <button class="close-btn" id="closeTransactionModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="transactionForm" class="form-grid">
+                    <input type="hidden" id="transactionId">
+                    
+                    <div class="form-group">
+                        <label for="transactionCustomer">Customer *</label>
+                        <select id="transactionCustomer" name="customer" required>
+                            <option value="">Pilih Customer</option>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transactionDate">Tanggal Transaksi *</label>
+                        <input type="datetime-local" id="transactionDate" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transactionMethod">Metode Pembayaran *</label>
+                        <select id="transactionMethod" name="method" required>
+                            <option value="">Pilih Metode</option>
+                            <option value="cash">Cash</option>
+                            <option value="transfer">Transfer Bank</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="e_wallet">E-Wallet</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transactionStatus">Status</label>
+                        <select id="transactionStatus" name="status">
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="refunded">Refunded</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Layanan yang Dipilih *</label>
+                        <div class="services-selection" id="servicesSelection">
+                            <!-- Services will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transactionDiscount">Diskon (%)</label>
+                        <input type="number" id="transactionDiscount" name="discount" min="0" max="100" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transactionTax">Pajak (%)</label>
+                        <input type="number" id="transactionTax" name="tax" min="0" max="100" value="10">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <div class="transaction-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotalAmount">Rp 0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Diskon:</span>
+                                <span id="discountAmount">Rp 0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Pajak:</span>
+                                <span id="taxAmount">Rp 0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="totalAmount">Rp 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="transactionNotes">Catatan</label>
+                        <textarea id="transactionNotes" name="notes" rows="3" placeholder="Catatan tambahan..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelTransactionForm">Batal</button>
+                <button class="btn btn-primary" id="saveTransaction">
+                    <i class="fas fa-save"></i>
+                    Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Konfirmasi Hapus</h3>
+            </div>
+            <div class="modal-body">
+                <p id="deleteMessage">Apakah Anda yakin ingin menghapus transaksi ini?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelDelete">Batal</button>
+                <button class="btn btn-error" id="confirmDelete">
+                    <i class="fas fa-trash"></i>
+                    Hapus
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Konfirmasi Logout</h3>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda yakin ingin keluar dari dashboard admin?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelLogout">Batal</button>
+                <button class="btn btn-primary" id="confirmLogout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/transaksi.js"></script>
+</body>
+</html>

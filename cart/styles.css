@@ -40,7 +40,7 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   font-weight: 700;
-  color: #e91e63;
+  color: #d16ba5;
   text-decoration: none;
 }
 
@@ -63,7 +63,7 @@ body {
 
 .nav-list a:hover,
 .nav-list a.active {
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 .header-actions {
@@ -81,11 +81,11 @@ body {
 }
 
 .icon-btn:hover {
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 .cart-icon.active {
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 .cart-count {
@@ -126,22 +126,24 @@ body {
 }
 
 .btn-primary {
-  background: #e91e63;
+  background: #d16ba5;
   color: #fff;
+  border: 2px solid #d16ba5;
 }
 
 .btn-primary:hover {
-  background: #c2185b;
+  background: #d16ba5;
+  color: #fff;
 }
 
 .btn-outline {
   background: transparent;
-  color: #e91e63;
-  border: 2px solid #e91e63;
+  color: #d16ba5;
+  border: 2px solid #d16ba5;
 }
 
 .btn-outline:hover {
-  background: #e91e63;
+  background: #d16ba5;
   color: #fff;
 }
 
@@ -168,31 +170,7 @@ body {
   margin-top: 80px;
 }
 
-.breadcrumb-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-}
 
-.breadcrumb-nav a {
-  color: #666;
-  text-decoration: none;
-}
-
-.breadcrumb-nav a:hover {
-  color: #e91e63;
-}
-
-.breadcrumb-nav i {
-  color: #999;
-  font-size: 0.8rem;
-}
-
-.breadcrumb-nav span {
-  color: #e91e63;
-  font-weight: 500;
-}
 
 /* Cart Page */
 .cart-page {
@@ -213,7 +191,7 @@ body {
 }
 
 .page-header h1 i {
-  color: #e91e63;
+  color: #d16ba5;
   margin-right: 0.5rem;
 }
 
@@ -327,7 +305,7 @@ body {
 .item-price {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #e91e63;
+  color: #d16ba5;
   margin-right: auto;
 }
 
@@ -393,7 +371,7 @@ body {
 }
 
 .total-row span:last-child {
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 /* Booking Info */
@@ -433,7 +411,7 @@ body {
 .booking-field select:focus,
 .booking-field textarea:focus {
   outline: none;
-  border-color: #e91e63;
+  border-color: #d16ba5;
 }
 
 .booking-field textarea {
@@ -621,7 +599,7 @@ body {
 
 .form-group input:focus {
   outline: none;
-  border-color: #e91e63;
+  border-color: #d16ba5;
 }
 
 /* Success Modal */
@@ -653,7 +631,7 @@ body {
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 2rem;
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 .success-actions {
@@ -664,8 +642,7 @@ body {
 
 /* Footer */
 .footer {
-  background: #333;
-  color: #fff;
+ background-color:#fff;
   padding: 3rem 0 1rem;
   margin-top: 3rem;
 }
@@ -684,7 +661,7 @@ body {
 
 .footer-col h3 {
   font-family: "Playfair Display", serif;
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 .footer-links {
@@ -696,13 +673,13 @@ body {
 }
 
 .footer-links a {
-  color: #ccc;
+    color: #777;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #e91e63;
+  color: #d16ba5;
 }
 
 .social-icons {
@@ -717,15 +694,16 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #e91e63;
-  color: #fff;
+  background: #f8f9fa;
+  color: #333;
   border-radius: 50%;
   text-decoration: none;
   transition: background 0.3s ease;
 }
 
 .social-icon:hover {
-  background: #c2185b;
+  background: #d16ba5;
+  color: #fff;
 }
 
 .contact-info p {
@@ -734,7 +712,7 @@ body {
 }
 
 .contact-info i {
-  color: #e91e63;
+  color: #d16ba5;
   margin-right: 0.5rem;
   width: 15px;
 }

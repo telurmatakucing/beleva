@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Pengguna - Glow & Grace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/users.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>Glow & Grace</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../articles_admin/index.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Kelola Artikel</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../services_admin/index.html" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Kelola Layanan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/users/" class="nav-link active">
+                        <i class="fas fa-users"></i>
+                        <span>Kelola Pengguna</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../transaksi/index.html" class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Kelola Transaksi</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Kelola Pengguna</h1>
+            </div>
+            
+          
+                
+                <div class="header-actions">
+                    <button class="action-btn notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    
+                    <div class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name" id="userName">Admin</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+    
+                <div class="section-actions">
+                    <div class="search-filter">
+                        <input type="text" id="userSearch" placeholder="Cari pengguna..." class="search-input">
+                        <select id="userRoleFilter" class="filter-select">
+                            <option value="">Semua Role</option>
+                            <option value="customer">Customer</option>
+                            <option value="staff">Staff</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <select id="userStatusFilter" class="filter-select">
+                            <option value="">Semua Status</option>
+                            <option value="active">Aktif</option>
+                            <option value="inactive">Tidak Aktif</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="addUserBtn">
+                        <i class="fas fa-plus"></i>
+                        Tambah Pengguna
+                    </button>
+                </div>
+            </div>
+            
+            <div class="users-table-container">
+                <table class="users-table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAll">
+                            </th>
+                            <th>Pengguna</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Bergabung</th>
+                            <th>Terakhir Login</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- Users will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Menampilkan <span id="userStartRange">1</span>-<span id="userEndRange">10</span> dari <span id="userTotal">25</span> pengguna
+                </div>
+                <div class="pagination-controls">
+                    <button class="btn btn-outline" id="userPrevPage" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="page-numbers" id="userPageNumbers">
+                        <button class="btn btn-outline active">1</button>
+                        <button class="btn btn-outline">2</button>
+                        <button class="btn btn-outline">3</button>
+                    </span>
+                    <button class="btn btn-outline" id="userNextPage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- User Modal -->
+    <div class="modal" id="userModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3 id="userModalTitle">Tambah Pengguna Baru</h3>
+                <button class="close-btn" id="closeUserModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm" class="form-grid">
+                    <input type="hidden" id="userId">
+                    
+                    <div class="form-group">
+                        <label for="userName">Nama Lengkap *</label>
+                        <input type="text" id="userName" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userEmail">Email *</label>
+                        <input type="email" id="userEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userPhone">No. Telepon</label>
+                        <input type="tel" id="userPhone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userRole">Role *</label>
+                        <select id="userRole" name="role" required>
+                            <option value="">Pilih Role</option>
+                            <option value="customer">Customer</option>
+                            <option value="staff">Staff</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userStatus">Status</label>
+                        <select id="userStatus" name="status">
+                            <option value="active">Aktif</option>
+                            <option value="inactive">Tidak Aktif</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userGender">Jenis Kelamin</label>
+                        <select id="userGender" name="gender">
+                            <option value="">Pilih</option>
+                            <option value="female">Perempuan</option>
+                            <option value="male">Laki-laki</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userBirthDate">Tanggal Lahir</label>
+                        <input type="date" id="userBirthDate" name="birthDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userAvatar">URL Avatar</label>
+                        <input type="url" id="userAvatar" name="avatar" placeholder="https://example.com/avatar.jpg">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="userAddress">Alamat</label>
+                        <textarea id="userAddress" name="address" rows="3" placeholder="Alamat lengkap..."></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="userNotes">Catatan</label>
+                        <textarea id="userNotes" name="notes" rows="2" placeholder="Catatan tambahan..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelUserForm">Batal</button>
+                <button class="btn btn-primary" id="saveUser">
+                    <i class="fas fa-save"></i>
+                    Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Konfirmasi Hapus</h3>
+            </div>
+            <div class="modal-body">
+                <p id="deleteMessage">Apakah Anda yakin ingin menghapus pengguna ini?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelDelete">Batal</button>
+                <button class="btn btn-error" id="confirmDelete">
+                    <i class="fas fa-trash"></i>
+                    Hapus
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Konfirmasi Logout</h3>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda yakin ingin keluar dari dashboard admin?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelLogout">Batal</button>
+                <button class="btn btn-primary" id="confirmLogout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/users.js"></script>
+</body>
+</html>

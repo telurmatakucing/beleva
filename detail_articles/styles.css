@@ -488,8 +488,8 @@ body {
 
 /* Footer */
 .footer {
-  background: #333;
-  color: #fff;
+   background-color:#f8f8f8;
+  
   padding: 3rem 0 1rem;
   margin-top: 3rem;
 }
@@ -520,7 +520,7 @@ body {
 }
 
 .footer-links a {
-  color: #ccc;
+  color: #777;
   text-decoration: none;
   transition: color 0.3s ease;
 }

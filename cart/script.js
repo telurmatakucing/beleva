@@ -1,21 +1,21 @@
 // Sample services data (in real app, this would come from your services page)
 const servicesData = {
-  "classic-facial": {
-    id: "classic-facial",
-    name: "Classic Facial",
-    price: 850000, // Ubah ke format rupiah
+  "male-haircut": {
+    id: "male-haircut",
+    name: "Male Haircut",
+    price: 850000,
     duration: 60,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Facial",
+    image: "../image/men.jpg", // Sesuai dengan gambar yang ada
     description:
-      "A deep cleansing facial that includes exfoliation, extraction, and a customized mask to rejuvenate your skin.",
-    category: "facial",
+      "Professional male haircut with modern styling techniques tailored to your face shape.",
+    category: "hair",
   },
   "anti-aging-facial": {
     id: "anti-aging-facial",
     name: "Anti-Aging Facial",
     price: 1100000,
     duration: 75,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Anti-Aging",
+    image: "../image/facial.jpg", // Menggunakan facial.jpg
     description:
       "Targets fine lines and wrinkles with specialized serums and techniques to promote collagen production.",
     category: "facial",
@@ -25,7 +25,7 @@ const servicesData = {
     name: "Haircut & Styling",
     price: 650000,
     duration: 45,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Haircut",
+    image: "../image/haircare.jpg", // Menggunakan haircare.jpg
     description: "Professional haircut and styling tailored to your face shape and personal style preferences.",
     category: "hair",
   },
@@ -34,7 +34,7 @@ const servicesData = {
     name: "Hair Coloring",
     price: 1200000,
     duration: 120,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Hair+Color",
+    image: "../image/colorman.jpg", // Menggunakan colorman.jpg
     description: "Full hair coloring service using premium products for vibrant, long-lasting results.",
     category: "hair",
   },
@@ -43,7 +43,7 @@ const servicesData = {
     name: "Classic Manicure",
     price: 400000,
     duration: 45,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Manicure",
+    image: "../image/manicure.jpg", // Menggunakan manicure.jpg
     description: "Nail shaping, cuticle care, hand massage, and polish application for beautifully groomed hands.",
     category: "nail",
   },
@@ -52,7 +52,7 @@ const servicesData = {
     name: "Luxury Pedicure",
     price: 550000,
     duration: 60,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Pedicure",
+    image: "../image/pedicure.jpg", // Menggunakan pedicure.jpg
     description: "Indulgent foot treatment including exfoliation, massage, and polish for perfectly pampered feet.",
     category: "nail",
   },
@@ -61,7 +61,7 @@ const servicesData = {
     name: "Special Occasion Makeup",
     price: 900000,
     duration: 60,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Makeup",
+    image: "../image/makeup.jpg", // Menggunakan makeup.jpg
     description: "Professional makeup application for weddings, parties, and special events using premium products.",
     category: "makeup",
   },
@@ -70,12 +70,11 @@ const servicesData = {
     name: "Relaxation Massage",
     price: 950000,
     duration: 60,
-    image: "https://placehold.co/600x400/FFF0D9/FF85A2?text=Massage",
+    image: "../image/massage.jpg", // Menggunakan massage.jpg
     description: "Gentle massage techniques to promote relaxation, reduce stress, and improve overall wellbeing.",
     category: "massage",
   },
 }
-
 // Cart management
 let cart = JSON.parse(localStorage.getItem("salonCart")) || []
 

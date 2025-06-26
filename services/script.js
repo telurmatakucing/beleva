@@ -311,15 +311,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Service data for cart (mapping service names to IDs and details)
   const servicesData = {
-    "Classic Facial": {
-      id: "classic-facial",
-      name: "Classic Facial",
-      price: 850000,
+    "Male Haircut": {
+      id: "male-haircut",
+      name: "Male Haircut",
+      price: 250000,
       duration: 60,
       image: "/placeholder.svg?height=200&width=300",
       description:
-        "A deep cleansing facial that includes exfoliation, extraction, and a customized mask to rejuvenate your skin.",
-      category: "facial",
+        "A stylish haircut designed specifically for men, tailored to your preferences.",
+      category: "hair",
     },
     "Anti-Aging Facial": {
       id: "anti-aging-facial",
@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Haircut & Styling": {
       id: "haircut-styling",
       name: "Haircut & Styling",
-      price: 650000,
+      price: 350000,
       duration: 45,
       image: "/placeholder.svg?height=200&width=300",
       description: "Professional haircut and styling tailored to your face shape and personal style preferences.",
@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Classic Manicure": {
       id: "classic-manicure",
       name: "Classic Manicure",
-      price: 400000,
+      price: 100000,
       duration: 45,
       image: "/placeholder.svg?height=200&width=300",
       description: "Nail shaping, cuticle care, hand massage, and polish application for beautifully groomed hands.",
@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Luxury Pedicure": {
       id: "luxury-pedicure",
       name: "Luxury Pedicure",
-      price: 550000,
+      price: 150000,
       duration: 60,
       image: "/placeholder.svg?height=200&width=300",
       description: "Indulgent foot treatment including exfoliation, massage, and polish for perfectly pampered feet.",
