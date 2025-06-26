@@ -22,7 +22,7 @@ class ProductsManager {
         price: 150000,
         duration: 90,
         status: "active",
-        image: "../image/faciall.jpg",
+        image: "/image/faciall.jpg",
         description: "Perawatan wajah mendalam untuk membersihkan pori-pori dan mengangkat sel kulit mati.",
         benefits:
           "Membersihkan pori-pori secara mendalam\nMengangkat sel kulit mati\nMeningkatkan sirkulasi darah\nMembuat kulit lebih cerah dan halus",
@@ -36,7 +36,7 @@ class ProductsManager {
         price: 200000,
         duration: 120,
         status: "active",
-        image: "../image/hairspa.jpg",
+        image: "/image/hairspa.jpg",
         description: "Perawatan rambut lengkap dengan masker nutrisi dan pijat kepala yang menenangkan.",
         benefits:
           "Menutrisi rambut dari akar hingga ujung\nMengatasi rambut kering dan rusak\nMerelaksasi otot kepala\nMembuat rambut lebih berkilau",
@@ -50,7 +50,7 @@ class ProductsManager {
         price: 180000,
         duration: 60,
         status: "active",
-        image: "../image/spamassage.jpg",
+        image: "/image/spamassage.jpg",
         description: "Pijat tubuh dengan teknik relaksasi untuk menghilangkan stress dan ketegangan otot.",
         benefits:
           "Menghilangkan stress dan ketegangan\nMeningkatkan sirkulasi darah\nMerelaksasi otot-otot tubuh\nMeningkatkan kualitas tidur",
@@ -64,7 +64,7 @@ class ProductsManager {
         price: 120000,
         duration: 75,
         status: "active",
-        image: "../image/gelpedicure.jpg",
+        image: "/image/gelpedicure.jpg",
         description: "Perawatan kuku tangan dan kaki lengkap dengan gel polish yang tahan lama.",
         benefits:
           "Kuku terlihat rapi dan indah\nGel polish tahan hingga 2 minggu\nKulit tangan dan kaki lebih halus\nDesain nail art sesuai keinginan",
@@ -78,7 +78,7 @@ class ProductsManager {
         price: 500000,
         duration: 180,
         status: "active",
-        image: "../image/bridal.jpg",
+        image: "/image/bridal.jpg",
         description: "Paket makeup pengantin lengkap dengan trial makeup dan touch up di hari H.",
         benefits:
           "Konsultasi dan trial makeup\nMakeup tahan hingga 12 jam\nTouch up gratis di hari H\nFoto dokumentasi makeup",
@@ -92,7 +92,7 @@ class ProductsManager {
         price: 250000,
         duration: 105,
         status: "active",
-        image: "../image/antiaging.jpg",
+        image: "/image/antiaging.jpg",
         description: "Perawatan wajah khusus anti-aging dengan serum dan masker premium untuk kulit mature.",
         benefits:
           "Mengurangi tanda-tanda penuaan\nMengencangkan kulit wajah\nMeningkatkan elastisitas kulit\nMembuat kulit tampak lebih muda",
@@ -106,7 +106,7 @@ class ProductsManager {
         price: 300000,
         duration: 150,
         status: "inactive",
-        image: "../image/haircolor.jpg",
+        image: "/image/haircolor.jpg",
         description: "Layanan pewarnaan rambut profesional dengan produk berkualitas tinggi dan aman.",
         benefits:
           "Warna rambut sesuai keinginan\nProduk pewarna berkualitas tinggi\nTreatment sebelum dan sesudah\nKonsultasi warna gratis",
@@ -120,7 +120,7 @@ class ProductsManager {
         price: 220000,
         duration: 90,
         status: "active",
-        image: "../image/hotstone.jpg",
+        image: "/image/hotstone.jpg",
         description: "Pijat dengan batu panas vulkanik untuk relaksasi mendalam dan detoksifikasi tubuh.",
         benefits:
           "Detoksifikasi tubuh alami\nMeningkatkan metabolisme\nMenghilangkan racun dalam tubuh\nRelaksasi mendalam",
